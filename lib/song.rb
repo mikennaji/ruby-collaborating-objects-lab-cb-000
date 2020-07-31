@@ -33,7 +33,7 @@ end
 #    self.artist = artists_store[0]
 #end
 
-#end   Dont Repeat yourself functionality is extened from the above function  
+#end   Dont Repeat yourself functionality is extened from the above function
 
 def artist_name=(name)
   artists_store = Artist.all.select{|artist|artist.name===name}
