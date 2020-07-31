@@ -24,17 +24,24 @@ def self.new_by_filename(filename)
   return song
 end
 
+#def artist_name=(name)
+# artists_store = Artist.all.select{|artist|artist.name===name}
+
+ #if artists_store.empty?
+##   artist= Artist.new(name)
+#   self.artist = artist
+#    self.artist = artists_store[0]
+#end
+
+#end   Dont Repeat yourself functionality is extened from the above function  
+
 def artist_name=(name)
- artists_store = Artist.all.select{|artist|artist.name===name}
+   self.artist = Artist.find_or_create_by_name(name)
+   artist.add_song(self)
+ end
 
- if artists_store.empty?
-   artist= Artist.new(name)
-   self.artist = artist
-else
-    self.artist = artists_store[0]
-end
 
-end
+
 
 
 
