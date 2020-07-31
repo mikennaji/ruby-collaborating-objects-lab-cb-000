@@ -45,6 +45,8 @@ def artist_name=(name)
      self.artist = artists_store[0]
  end
 
+ end
+
 
 
 
